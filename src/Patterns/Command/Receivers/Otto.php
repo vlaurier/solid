@@ -5,16 +5,16 @@ class Otto
 {
     public function comeOutOfTheDressingRoom()
     {
-        echo "Otto sort de la loge en tirant la langue."."</br>";
+        echo "Otto leaves the dressing room sticking her tongue out."."<br/>";
     }
 
     public function pickTheBallsUp()
     {
-        echo "Elle ramasse les ballons"."</br>";
+        echo "She picks the balls up."."<br/>";
     }
 
     public function putThemAway()
     {
-        echo "Puis les range en hauteur."."</br>";
+        echo "Then she puts them away."."<br/><hr/>";
     }
 }

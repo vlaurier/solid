@@ -1,21 +1,20 @@
 <?php
 namespace Solid\Patterns\Command\Receivers;
 
-
 class Torp
 {
     public function comeOutOfTheDressingRoom()
     {
-        echo "Torp sort de la loge pas très heureux que ce soit son tour."."</br>";
+        echo "Torp comes out of the dressing room unhappy because it's his turn."."<br/>";
     }
 
     public function pickTheHoopsUp()
     {
-        echo "Il ramasse les cerceaux et le reste de son matériel"."</br>";
+        echo "He picks up the hoops and the rest of his stuff."."<br/>";
     }
 
     public function putThemAway()
     {
-        echo "Puis range le tout"."</br>";
+        echo "Then he puts them all away."."<br/><hr/>";
     }
 }

@@ -13,21 +13,24 @@ use Solid\Patterns\Command\Commands\PutTheStoolAway;
 use Solid\Patterns\Command\Commands\PutTheTrapezesAway;
 use Solid\Patterns\Command\Commands\PutAllTheRestAway;
 
+// For the following two lines of code, see explanation in the introduction (p ).
 require "../../../vendor/autoload.php";
+header('Content-Type: text/html; charset=utf-8');
 
-// La demande initiale destinée à Otto
+// First command designated to Otto
 $receiver1 = new Otto();
 $command1 = new PutTheBallsAway($receiver1);
 $invoker = new Invoker($command1);
 $invoker->slideThePaperUnderTheDoor();
 
-// La seconde demande, cette fois pour Torp
+// The second command for Torp
 $receiver2 = new Torp();
 $command2 = new PutTheHoopsAway($receiver2);
 $invoker->setCommand($command2);
 $invoker->slideThePaperUnderTheDoor();
 
-// Gepetto crée ensuite 3 commandes qu'il envoie comme une commande groupée.
+// Gepetto then writes 3 commands which he sends as a whole.
+
 $receiver3 = new Titou();
 $receiver4 = new Zeita();
 $receiver5 = new Ringo();

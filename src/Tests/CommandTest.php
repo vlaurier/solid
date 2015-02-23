@@ -1,7 +1,7 @@
 <?php
 namespace Solid\Tests;
+
 use Solid\Patterns\Command\Invoker;
-use Solid\Patterns\Command\Receivers\Otto;
 use Solid\Patterns\Command\Commands\PutTheBallsAway;
 
 /**
@@ -19,7 +19,7 @@ class CommandTest extends \PHPUnit_Framework_TestCase
     }
 
     public function testInvocation()
-    {        
+    {
         // Set up the expectation for receiver's methods to be called only once.
         $this->receiver->expects($this->once())
                  ->method('comeOutOfTheDressingRoom');

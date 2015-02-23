@@ -1,11 +1,10 @@
 <?php
 namespace Solid\Patterns\Command\Receivers;
 
-
 class Zeita
 {
     public function pickTheSkittlesAndUnicycleUp()
     {
-        echo "Zeita ramasse les quilles et le monocycle"."</br>";
+        echo "Zeita picks up the skittles and the unicycle."."<br/>";
     }
 }
