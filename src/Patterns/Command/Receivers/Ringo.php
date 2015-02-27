@@ -1,4 +1,5 @@
 <?php
+// src/Patterns/Command/Receivers/Ringo.php
 namespace Solid\Patterns\Command\Receivers;
 
 class Ringo

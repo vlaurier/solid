@@ -1,4 +1,5 @@
 <?php
+// src/Patterns/Command/Receivers/Otto.php
 namespace Solid\Patterns\Command\Receivers;
 
 class Otto

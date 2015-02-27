@@ -1,4 +1,5 @@
 <?php
+// src/Patterns/Command/Receivers/Zeita.php
 namespace Solid\Patterns\Command\Receivers;
 
 class Zeita

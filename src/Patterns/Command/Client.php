@@ -1,4 +1,5 @@
 <?php
+// src/Patterns/Command/Client.php
 namespace Solid\Patterns\Command;
 
 use Solid\Patterns\Command\Receivers\Otto;
