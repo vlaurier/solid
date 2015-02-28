@@ -12,7 +12,7 @@ class PutAllTheRestAway implements Command
     {
         foreach ($commands as $command) {
             if (!$command instanceof Command) {
-                throw new \Exception('All elements of $commands array should be instance of Command');
+                throw new \Exception('$commands should only contain commands');
             }
         }
         $this->commands = $commands;
