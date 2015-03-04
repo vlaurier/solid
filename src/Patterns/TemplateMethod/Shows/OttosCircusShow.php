@@ -1,5 +1,8 @@
 <?php
-namespace Solid\Patterns\TemplateMethod;
+// src/Patterns/TemplateMethod/Shows/OttosCircusShow.php
+namespace Solid\Patterns\TemplateMethod\Shows;
+
+use Solid\Patterns\TemplateMethod\GepettosCircusShow;
 
 class OttosCircusShow extends GepettosCircusShow
 {
@@ -23,4 +26,3 @@ class OttosCircusShow extends GepettosCircusShow
         echo "Les confettis accompagnent la sortie de l'otarie.<br/><hr/>";
     }
 }
-

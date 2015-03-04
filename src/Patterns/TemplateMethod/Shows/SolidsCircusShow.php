@@ -1,5 +1,8 @@
 <?php
-namespace Solid\Patterns\TemplateMethod;
+// src/Patterns/TemplateMethod/Shows/SolidsCircusShow.php
+namespace Solid\Patterns\TemplateMethod\Shows;
+
+use Solid\Patterns\TemplateMethod\GepettosCircusShow;
 
 class SolidsCircusShow extends GepettosCircusShow
 {
@@ -23,4 +26,3 @@ class SolidsCircusShow extends GepettosCircusShow
         echo "Solid est toujours le dernier. C'est la star du cirque. Il disparaît sous la fanfare.<br/><hr/>";
     }
 }
-

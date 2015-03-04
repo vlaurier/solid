@@ -1,6 +1,7 @@
 <?php
 namespace Solid\Tests;
-use Solid\Patterns\TemplateMethod\OttosCircusShow;
+
+use Solid\Patterns\TemplateMethod\Shows\OttosCircusShow;
 
 class TemplateMethodTest extends \PHPUnit_Framework_TestCase
 {

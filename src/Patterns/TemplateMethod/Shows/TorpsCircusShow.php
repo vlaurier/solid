@@ -1,5 +1,8 @@
 <?php
-namespace Solid\Patterns\TemplateMethod;
+// src/Patterns/TemplateMethod/Shows/TorpsCircusShow.php
+namespace Solid\Patterns\TemplateMethod\Shows;
+
+use Solid\Patterns\TemplateMethod\GepettosCircusShow;
 
 class TorpsCircusShow extends GepettosCircusShow
 {
@@ -18,4 +21,3 @@ class TorpsCircusShow extends GepettosCircusShow
         echo "Comme toujours, les confettis accompagnent sa sortie.<br/><hr/>";
     }
 }
-
