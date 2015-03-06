@@ -1,8 +1,8 @@
 <?php
-
+// src/Patterns/TemplateMethod/CircusShow.php
 namespace Solid\Patterns\TemplateMethod;
 
-abstract class GepettosCircusShow
+abstract class CircusShow
 {
     final public function giveAPerformance()
     {
@@ -25,19 +25,19 @@ abstract class GepettosCircusShow
 
     }
 
-    final private function makeYourEntry()
+    private function makeYourEntry()
     {
         echo $this->getCharacterName() . " entre et dépose son matériel.<br/>";
     }
 
     protected function greetTheSpectators()
     {
-        echo $this->getCharacterName() . " fait le tour de piste<br/>";
+        echo $this->getCharacterName() . " fait le tour de piste en saluant de la main le public.<br/>";
     }
     
     abstract protected function actYourPerformance();
             
-    final private function bow()
+    private function bow()
     {
         echo "Le spectacle se termine par une belle révérence dans les règles de l'art.<br/>";
     }

@@ -2,9 +2,9 @@
 // src/Patterns/TemplateMethod/Shows/OttosCircusShow.php
 namespace Solid\Patterns\TemplateMethod\Shows;
 
-use Solid\Patterns\TemplateMethod\GepettosCircusShow;
+use Solid\Patterns\TemplateMethod\CircusShow;
 
-class OttosCircusShow extends GepettosCircusShow
+class OttosCircusShow extends CircusShow
 {
     protected function beforeShow()
     {

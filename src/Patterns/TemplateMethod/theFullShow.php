@@ -1,4 +1,5 @@
 <?php
+// src/Patterns/TemplateMethod/theFullShow.php
 use Solid\Patterns\TemplateMethod\Shows\OttosCircusShow;
 use Solid\Patterns\TemplateMethod\Shows\TorpsCircusShow;
 use Solid\Patterns\TemplateMethod\Shows\SolidsCircusShow;

@@ -2,9 +2,9 @@
 // src/Patterns/TemplateMethod/Shows/TorpsCircusShow.php
 namespace Solid\Patterns\TemplateMethod\Shows;
 
-use Solid\Patterns\TemplateMethod\GepettosCircusShow;
+use Solid\Patterns\TemplateMethod\CircusShow;
 
-class TorpsCircusShow extends GepettosCircusShow
+class TorpsCircusShow extends CircusShow
 {
     protected function beforeShow()
     {
