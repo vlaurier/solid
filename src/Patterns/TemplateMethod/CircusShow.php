@@ -25,7 +25,7 @@ abstract class CircusShow
 
     }
 
-    private function makeYourEntry()
+    final private function makeYourEntry()
     {
         echo $this->getCharacterName() . " entre et dépose son matériel.<br/>";
     }
@@ -37,7 +37,7 @@ abstract class CircusShow
     
     abstract protected function actYourPerformance();
             
-    private function bow()
+    final private function bow()
     {
         echo "Le spectacle se termine par une belle révérence dans les règles de l'art.<br/>";
     }
