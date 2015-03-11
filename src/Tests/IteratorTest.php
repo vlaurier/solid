@@ -1,14 +1,14 @@
 <?php
 namespace Solid\Tests;
 
-use Solid\Patterns\Iterator\Items\Page;
-use Solid\Patterns\Iterator\Items\Inventory;
+use Solid\Patterns\Iterator\Aggregates\Page;
+use Solid\Patterns\Iterator\Aggregates\InventoryAggregate;
 
 class IteratorTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->inventory = new Inventory(
+        $this->inventory = new InventoryAggregate(
             array(
                 new Page('C2015', 'Cup', 'A cup won in 2015', 'chipped'),
                 new Page('C2017', 'Cup', 'A cup won in 2017', 'brand new'),
@@ -46,6 +46,7 @@ class IteratorTest extends \PHPUnit_Framework_TestCase
     
     public function testCurrent()
     {
-        $this->assertEquals($this->inventory->getIterator()->current()->__toString(), 'Cup (C2015) [chipped]<br/>A cup won in 2015<hr/>');
+        $result = 'Type: Cup<br/>Référence: C2015<br/>Etat: chipped<br/>Description: A cup won in 2015<br/>';
+        $this->assertEquals($this->inventory->getIterator()->current()->__toString(), $result);
     }
 }
