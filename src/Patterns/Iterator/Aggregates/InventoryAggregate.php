@@ -1,9 +1,10 @@
 <?php
-namespace Solid\Patterns\Iterator\Items;
+namespace Solid\Patterns\Iterator\Aggregates;
 
+use Solid\Patterns\Iterator\Aggregate;
 use Solid\Patterns\Iterator\Iterators\Solid;
 
-class Inventory 
+class InventoryAggregate implements Aggregate
 {
     private $pages;
     
@@ -18,15 +19,6 @@ class Inventory
         
         // En cas de validité, on enregistre la collection dans une propriété privée.
         $this->pages = $pages;
-    }
-    
-    public function __toString() {
-        $output = '';
-        foreach($this->pages as $page) {
-            echo $page;
-        }
-        
-        return $output;
     }
     
     public function getIterator()

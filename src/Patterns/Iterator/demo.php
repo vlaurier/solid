@@ -1,96 +1,77 @@
 <?php
 
-use Solid\Patterns\Iterator\Items\Item;
-use Solid\Patterns\Iterator\Items\StoreRoom;
-use Solid\Patterns\Iterator\Items\Inventory;
-use Solid\Patterns\Iterator\Items\Page;
+use Solid\Patterns\Iterator\Aggregates\Item;
+use Solid\Patterns\Iterator\Aggregates\StoreRoomAggregate;
+use Solid\Patterns\Iterator\Aggregates\InventoryAggregate;
+use Solid\Patterns\Iterator\Aggregates\Page;
 
 require "../../../vendor/autoload.php";
+header('Content-Type: text/html; charset=utf-8');
 
-$cup2015 = new Item('C2015', 'Cup');
-$cup2017 = new Item('C2017', 'Cup');
-$ballonYellow = new Item('B1', 'Ballon');
-$ballonRed = new Item('B1', 'Ballon');
-$skittles = new Item('S1', 'Skittles');
+$cup2015        = new Item('C2015', 'Coupe');
+$cup2017        = new Item('C2017', 'Coupe');
+$ballonYellow   = new Item('B001', 'Ballon');
+$ballonRed      = new Item('B002', 'Ballon');
+$skittles       = new Item('S001', 'Quilles');
 
 $shelves = array(
     array($cup2015, $cup2017),
     array($ballonYellow, $ballonRed),
-    array($skittles),    
+    array($skittles),
 );
 
-$storeRoom = new StoreRoom($shelves);
+$storeRoom = new StoreRoomAggregate($shelves);
 
-$inventory = new Inventory(
-        array(
-            new Page('C2015', 'Cup', 'A cup won in 2015', 'chipped'),
-            new Page('C2017', 'Cup', 'A cup won in 2017', 'brand new'),
-            new Page('B1', 'Ballon', 'A red ballon', 'brand new'),
-            new Page('B2', 'Ballon', 'A green ballon', 'old'),
-            new Page('S1', 'Skittles', 'Some red skittles', 'brand new'),
-            'test',
-        )
+$inventory = new InventoryAggregate(
+    array
+    (
+        new Page('C2013', 'Coupe', "Coupe sans anses gagnée au concours du cirque Rigolo de l'année 2013", 'ébréchée'),
+        new Page('C2014', 'Coupe', 'Coupe avec anses de 2014 gagnée au concours des animaux bien entretenus', 'toute neuve'),
+        new Page('B1', 'Ballon', 'Un ballon rouge', 'flambant neuf'),
+        new Page('B2', 'Ballon', 'Un ballon vert', 'usagé'),
+        new Page('S1', 'Quilles', 'Des quilles rouges', 'toutes neuves'),
+    )
 );
-/*echo "<h1>The inventory Solid browse</h1>";
-echo $inventory;
 
-echo "<h1>The shelves Torp looks over</h1>";
-echo $storeRoom;*/
+$solid = $inventory->getIterator();
+$torp = $storeRoom->getIterator();
 
-echo "<h1> iteration with Solid</h1>";
+print "<h2>Gepetto demande à ce que Torp et Solid s'intéressent au premier article.</h2>";
+
+print "Il se trouve à l'emplacement ".$torp->key()." du débarras, ";
+print "et à l'emplacement ".$solid->key()." de l'inventaire.<br/>";
+print "Dans le débarras, il y a bien un article à cet emplacement, donc valid() renvoie: ".$torp->valid()."<br/>";
+print "Dans l'inventaire, il y a bien une page à cet emplacement, donc valid() renvoie: ".$solid->valid()."<br/>";
+print "Torp voit qu'il s'agit de: ".$torp->current().'<br/>';
+print "Solid lit la description: ".$solid->current()->getDescription().'<br/><hr/>';
+
+print "<h2>Gepetto demande ensuite de passer à l'article suivant.</h2>";
+$torp->next();
+$solid->next();
+print "Il se trouve à l'emplacement ".$torp->key()." du débarras, ";
+print "et à l'emplacement ".$solid->key()." de l'inventaire.<br/>";
+print "Dans le débarras, il y a bien un article à cet emplacement, donc valid() renvoie: ".$torp->valid()."<br/>";
+print "Dans l'inventaire, il y a bien une page à cet emplacement, donc valid() renvoie: ".$solid->valid()."<br/>";
+print "Torp voit qu'il s'agit de: ".$torp->current().'<br/>';
+print "Solid lit la description: ".$solid->current()->getDescription().'<br/><hr/>';
+
+print "<h2>Gepetto veut finalement recommencer depuis le début.</h2>";
+
+$torp->rewind();
+$solid->rewind();
+
+print "On revient à l'emplacement ".$torp->key()." du débarras,";
+print " et à l'emplacement ".$solid->key()." de l'inventaire.<br/><hr/>";
+
+
+echo "<h2> Exemple d'une itération complète sur l'inventaire</h2>";
 
 foreach ($inventory->getIterator() as $page) {
-    echo $page;
+    print $page."<hr/>";
 }
 
-/*$inventoryIterator = $inventory->getIterator();
-echo $inventoryIterator->key();
-echo $inventoryIterator->current();
-echo $inventoryIterator->next();
-echo $inventoryIterator->key();
-echo $inventoryIterator->current();
-echo $inventoryIterator->next();
-echo $inventoryIterator->key();
-echo $inventoryIterator->current();
-echo $inventoryIterator->next();
-echo $inventoryIterator->key();
-echo $inventoryIterator->current();
-echo $inventoryIterator->next();
-echo $inventoryIterator->key();
-echo $inventoryIterator->current();
-echo $inventoryIterator->next();
-echo $inventoryIterator->key();
-echo $inventoryIterator->current();
-echo $inventoryIterator->next();*/
+echo "<h2> Exemple d'une itération complète sur le débarras</h2>";
 
-echo "<h1> iteration with Torp</h1>";
-$it = $storeRoom->getIterator();
-echo "<pre>";
-/*$it->valid();
-echo $it->current();
-echo $it->key();
-echo $it->next();
-$it->valid();
-echo $it->current();
-echo $it->key();
-echo $it->next();
-$it->valid();
-echo $it->current();
-echo $it->key();
-echo $it->next();
-$it->valid();
-echo $it->current();
-echo $it->key();
-echo $it->next();
-$it->valid();
-echo $it->current();
-echo $it->key();
-echo $it->next();
-$it->valid();
-echo $it->current();
-echo $it->key();
-echo $it->next();
-var_dump($it->current());*/
-foreach($it as $key => $value) {
-   echo $value;
+foreach ($storeRoom->getIterator() as $item) {
+    print $item;
 }

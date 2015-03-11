@@ -1,7 +1,7 @@
 <?php
-namespace Solid\Patterns\Iterator\Items;
+namespace Solid\Patterns\Iterator\Aggregates;
 
-class Item 
+class Item
 {
     private $reference;
     private $type;
@@ -12,7 +12,8 @@ class Item
         $this->type = $type;
     }
     
-    public function __toString() {
-        return $this->type.' ('.$this->reference.')';
+    public function __toString()
+    {
+        return $this->type.' ('.$this->reference.')<br/>';
     }
 }

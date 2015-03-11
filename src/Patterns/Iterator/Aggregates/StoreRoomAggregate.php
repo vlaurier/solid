@@ -1,9 +1,10 @@
 <?php
-namespace Solid\Patterns\Iterator\Items;
+namespace Solid\Patterns\Iterator\Aggregates;
 
+use Solid\Patterns\Iterator\Aggregate;
 use Solid\Patterns\Iterator\Iterators\Torp;
 
-class StoreRoom 
+class StoreRoomAggregate implements Aggregate
 {
     private $shelves;
     
@@ -25,15 +26,6 @@ class StoreRoom
         
         // En cas de validité, on enregistre la collection dans une propriété privée.
         $this->shelves = $shelves;
-    }
-    
-    public function __toString() {
-        $output = '';
-        foreach($this->shelves as $shelf) {
-            echo implode(',', $shelf).'<br/>';
-        }
-        
-        return $output;
     }
     
     public function getIterator()
