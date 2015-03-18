@@ -1,7 +1,10 @@
 <?php
 namespace Solid\Patterns\Iterator\Iterators;
 
-class Torp implements \Iterator
+use Solid\Patterns\Iterator\StoreRoomIterator;
+use Solid\Patterns\Iterator\Aggregates\Item;
+
+class Torp implements \Iterator, StoreRoomIterator
 {
     private $shelves;
       
@@ -58,7 +61,7 @@ class Torp implements \Iterator
     */
     public function valid ()
     {
-        return (null !== key($this->shelves)) || (null !== (key($this->currentShelf)));
+        return $this->current() instanceof Item;
     }
 
    /**

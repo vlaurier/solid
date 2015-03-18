@@ -2,6 +2,7 @@
 namespace Solid\Patterns\Iterator\Aggregates;
 
 use Solid\Patterns\Iterator\Aggregate;
+use Solid\Patterns\Iterator\Iterators\FilterTorp;
 use Solid\Patterns\Iterator\Iterators\Torp;
 
 class StoreRoomAggregate implements Aggregate
@@ -14,7 +15,7 @@ class StoreRoomAggregate implements Aggregate
         foreach ($shelves as $shelf) {
             // On vérifie qu'elle est representée comme un tableau...
             if (!is_array($shelf)) {
-                throw new \Exception('A shelf should be represented as an array');
+                throw new \Exception('A shelf should be an array');
             }
             // ... qui ne contient que des articles
             foreach ($shelf as $item) {
@@ -30,6 +31,6 @@ class StoreRoomAggregate implements Aggregate
     
     public function getIterator()
     {
-        return new Torp($this->shelves);
+        return new FilterTorp(new Torp($this->shelves), 'Ballon');
     }
 }

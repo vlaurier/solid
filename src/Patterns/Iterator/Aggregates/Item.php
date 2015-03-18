@@ -16,4 +16,9 @@ class Item
     {
         return $this->type.' ('.$this->reference.')<br/>';
     }
+
+    public function getType()
+    {
+        return $this->type;
+    }
 }

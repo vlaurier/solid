@@ -13,7 +13,7 @@ class InventoryAggregate implements Aggregate
         // On vérifie que chaque élément du tableau passé en argument est bien un objet Page.
         foreach ($pages as $page) {
             if (!$page instanceof Page) {
-               // throw new \Exception('The inventory should only contain pages');
+                throw new \Exception('The inventory should only contain pages');
             }
         }
         
