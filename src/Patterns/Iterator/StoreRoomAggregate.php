@@ -1,14 +1,13 @@
 <?php
-namespace Solid\Patterns\Iterator\Aggregates;
+namespace Solid\Patterns\Iterator;
 
-use Solid\Patterns\Iterator\Iterators\FilterTorp;
-use Solid\Patterns\Iterator\Iterators\Torp;
+use Solid\Patterns\Iterator\Aggregates\Item;
 
-class StoreRoomAggregate implements \IteratorAggregate
+abstract class StoreRoomAggregate implements \IteratorAggregate
 {
-    private $shelves;
+    protected $shelves;
     
-    public function __construct(array $shelves)
+    final public function __construct(array $shelves)
     {
         // Pour chaque étagère
         foreach ($shelves as $shelf) {
@@ -28,8 +27,5 @@ class StoreRoomAggregate implements \IteratorAggregate
         $this->shelves = $shelves;
     }
     
-    public function getIterator()
-    {
-        return new FilterTorp(new Torp($this->shelves), 'Ballon');
-    }
+    abstract public function getIterator();
 }

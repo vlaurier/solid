@@ -1,10 +1,9 @@
 <?php
 namespace Solid\Patterns\Iterator\Aggregates;
 
-use Solid\Patterns\Iterator\Aggregate;
 use Solid\Patterns\Iterator\Iterators\Solid;
 
-class InventoryAggregate implements Aggregate
+class InventoryAggregate implements \IteratorAggregate
 {
     private $pages;
     
