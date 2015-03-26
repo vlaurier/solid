@@ -1,8 +1,7 @@
 <?php
 
 use Solid\Patterns\Iterator\Aggregates\Item;
-use Solid\Patterns\Iterator\Aggregates\StoreRoom;
-use Solid\Patterns\Iterator\Aggregates\FilteredStoreRoom;
+use Solid\Patterns\Iterator\StoreRoomAggregate;
 use Solid\Patterns\Iterator\Aggregates\InventoryAggregate;
 use Solid\Patterns\Iterator\Aggregates\Page;
 
@@ -21,8 +20,7 @@ $shelves = array(
     array($skittles),
 );
 
-$storeRoom = new StoreRoom($shelves);
-$filteredStoreRoom = new FilteredStoreRoom($shelves);
+$storeRoom = new StoreRoomAggregate($shelves);
 
 $inventory = new InventoryAggregate(
     array
@@ -74,12 +72,8 @@ foreach ($inventory->getIterator() as $page) {
 
 echo "<h2> Exemple d'une itération complète sur le débarras</h2>";
 
-foreach ($storeRoom->getIterator() as $item) {
-    print $item;
-}
-
-echo "<h2> Exemple d'une itération avec un itérateur filtrant</h2>";
-
-foreach ($filteredStoreRoom->getIterator() as $item) {
+echo "<pre>";
+//var_dump($storeRoom->getIterator());die;
+foreach ($torp as $item) {
     print $item;
 }

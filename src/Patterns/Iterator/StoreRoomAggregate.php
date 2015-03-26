@@ -2,8 +2,9 @@
 namespace Solid\Patterns\Iterator;
 
 use Solid\Patterns\Iterator\Aggregates\Item;
+use Solid\Patterns\Iterator\Iterators\MultipleTorp;
 
-abstract class StoreRoomAggregate implements \IteratorAggregate
+class StoreRoomAggregate implements \IteratorAggregate
 {
     protected $shelves;
     
@@ -27,5 +28,8 @@ abstract class StoreRoomAggregate implements \IteratorAggregate
         $this->shelves = $shelves;
     }
     
-    abstract public function getIterator();
+    public function getIterator()
+    {
+        return new MultipleTorp($this->shelves, 'Ballon');
+    }
 }
