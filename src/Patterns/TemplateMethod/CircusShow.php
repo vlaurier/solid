@@ -49,13 +49,13 @@ abstract class CircusShow
 
     /*------------- Some useful methods ---------------*/
 
-    private function getCharacterName()
+    public function getCharacterName()
     {
         $shortClassNameWithAntiSlash = strrchr(get_class($this), "\\");
         return substr($shortClassNameWithAntiSlash, 1, strlen($shortClassNameWithAntiSlash) - 12);
     }
 
-    protected function isDday()
+    public function isDday()
     {
         return date('N') == 6;
     }
