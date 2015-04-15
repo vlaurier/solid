@@ -1,7 +1,7 @@
 <?php
 namespace Solid\Patterns\Iterator\Iterators;
 
-class MultipleTorp extends \AppendIterator
+class AppendTorp extends \AppendIterator
 {
     public function __construct($shelves, $type)
     {

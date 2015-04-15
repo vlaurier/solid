@@ -1,10 +1,9 @@
 <?php
 namespace Solid\Patterns\Iterator\Iterators;
 
-use Solid\Patterns\Iterator\StoreRoomIterator;
 use Solid\Patterns\Iterator\Aggregates\Item;
 
-class Torp implements \Iterator, StoreRoomIterator
+class Torp implements \Iterator
 {
     private $shelves;
       

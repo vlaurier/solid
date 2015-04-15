@@ -1,6 +1,7 @@
 <?php
 namespace Solid\Patterns\Iterator\Aggregates;
 
+use Solid\Patterns\Iterator\Iterators\AppendTorp;
 use Solid\Patterns\Iterator\Iterators\FilterTorp;
 use Solid\Patterns\Iterator\Iterators\Torp;
 
@@ -30,6 +31,17 @@ class StoreRoomAggregate implements \IteratorAggregate
     
     public function getIterator()
     {
-        return new FilterTorp(new Torp($this->shelves), 'Ballon');
+        //return new Torp($this->shelves);
+        //return new FilterTorp(new Torp($this->shelves), 'Ballon');
+        return new AppendTorp($this->shelves, 'Ballon');
+    }
+
+    public function getGenerator()
+    {
+        foreach ($this->shelves as $shelf) {
+            foreach ($shelf as $item) {
+                yield $item;
+            }
+        }
     }
 }
