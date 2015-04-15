@@ -7,24 +7,29 @@ use Solid\Patterns\Observer\Game;
 require "../../../vendor/autoload.php";
 header('Content-Type: text/html; charset=utf-8');
 
-/*$game = new Game();
-
-$solid = new Solid(3);
-
-//add player
-$game->attach($solid);
-
-$game->turn();*/
-
 $game = new Game();
 
-$solid = new Player('Solid', 1);
+// Au premier tour de jeu, Torp reçoit le numéro 2, Zeita le 3
 $torp  = new Player('Torp', 2);
-$otto  = new Player('Otto', 3);
+$zeita = new Player('Zeita', 3);
 
-//add player
-$game->attach($solid);
+// Ils sont donc inscrits...
 $game->attach($torp);
+$game->attach($zeita);
+
+// ... et la roue est tournée.
+echo "<h2>Premier tour de jeu</h2>";
+$game->turn();
+
+// Au second tour de jeu, Zeita se désinscrit.
+$game->detach($zeita);
+
+// Solid et Otto veulent jouer. Il reçoivent respectivement le 1 et le 3.
+$solid = new Player('Solid', 1);
+$game->attach($solid);
+$otto = new Player('Otto', 3);
 $game->attach($otto);
 
+// ... et la roue est tournée.
+echo "<h2>Second tour de jeu</h2>";
 $game->turn();
