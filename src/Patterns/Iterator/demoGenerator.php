@@ -27,12 +27,5 @@ echo "<h2> Exemple d'une itération complète sur le débarras avec un générat
 foreach ($storeRoom->getGenerator() as $item) {
     print $item;
 }
-$gen = $storeRoom->getGenerator();
-$gen->next();
-print $gen->current();
-$gen->rewind();
-$gen->next();
-print $gen->current();
-$gen->next();
-print $gen->current();
+
 

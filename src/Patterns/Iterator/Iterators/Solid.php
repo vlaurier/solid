@@ -35,7 +35,7 @@ class Solid implements \Iterator
    /**
     * Return the key of the current element
     *
-    * @return scalar scalar on success, or <b>NULL</b> on failure.
+    * @return scalar on success, or <b>NULL</b> on failure.
     */
     public function key ()
     {
@@ -43,10 +43,9 @@ class Solid implements \Iterator
     }
 
    /**
-    * (PHP 5 &gt;= 5.0.0)<br/>
-    *
-    * @return boolean The return value will be casted to boolean and then evaluated.
     * Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
+    *
+    * @return boolean The return value will be casted to boolean and evaluated.
     */
     public function valid ()
     {
