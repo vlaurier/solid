@@ -22,10 +22,8 @@ $shelves = array(
 
 $storeRoom = new StoreRoomAggregate($shelves);
 
-echo "<h2> Exemple d'une itération complète sur le débarras avec un générateur</h2>";
+echo "<h2> Itération complète sur le débarras avec un générateur</h2>";
 
 foreach ($storeRoom->getGenerator() as $item) {
     print $item;
 }
-
-
