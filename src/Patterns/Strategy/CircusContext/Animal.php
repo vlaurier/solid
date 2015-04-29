@@ -1,27 +1,53 @@
 <?php
 namespace Solid\Patterns\Strategy\CircusContext;
 
-use Solid\Patterns\Strategy\BalanceStrategy;
+use Solid\Patterns\Strategy\CrossingStrategy;
 use Solid\Patterns\Strategy\MusicalStrategy;
+use Solid\Patterns\Strategy\CrossingToolbox\NoCrossingStrategy;
+use Solid\Patterns\Strategy\MusicalStrategy\NoMusicalStrategy;
 
-abstract class Animal implements MusicalStrategy, BalanceStrategy
+abstract class Animal
 {
     /**
-     * @var BalanceStrategy $balanceStrategy
+     * @var CrossingStrategy $crossingStrategy
      */
-    private $balanceStrategy;
+    protected $crossingStrategy;
 
     /**
      * @var MusicalStrategy $musicalStrategy
      */
-    private $musicalStrategy;
+    protected $musicalStrategy;
 
     /**
-     * @param BalanceStrategy $balanceStrategy
+     * @var string the animal name
      */
-    public function setBalanceStrategy(BalanceStrategy $balanceStrategy)
+    protected $name;
+
+    /**
+     * @param $name
+     * @param CrossingStrategy $crossingStrategy
+     * @param MusicalStrategy $musicalStrategy
+     */
+    public function __construct(
+        $name,
+        CrossingStrategy $crossingStrategy = null,
+        MusicalStrategy $musicalStrategy = null
+    ) {
+        $this->name = $name;
+        if (null === $crossingStrategy) {
+            $this->crossingStrategy = new NoCrossingStrategy();
+        }
+        if (null === $musicalStrategy) {
+            $this->musicalStrategy = new NoMusicalStrategy();
+        }
+    }
+
+    /**
+     * @param CrossingStrategy $crossingStrategy
+     */
+    public function setCrossingStrategy(CrossingStrategy $crossingStrategy)
     {
-        $this->$balanceStrategy = $balanceStrategy;
+        $this->crossingStrategy = $crossingStrategy;
     }
 
     /**
@@ -29,6 +55,24 @@ abstract class Animal implements MusicalStrategy, BalanceStrategy
      */
     public function setMusicalStrategy(MusicalStrategy $musicalStrategy)
     {
-        $this->$musicalStrategy = $musicalStrategy;
+        $this->musicalStrategy = $musicalStrategy;
+    }
+
+    public function cross()
+    {
+        return $this->crossingStrategy->cross($this);
+    }
+
+    public function play()
+    {
+        return $this->musicalStrategy->play($this);
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

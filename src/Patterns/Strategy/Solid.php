@@ -1,15 +1,12 @@
 <?php
 namespace Solid\Patterns\Strategy;
 
-use Solid\Patterns\Strategy\BalanceStrategy;
-use Solid\Patterns\Strategy\MusicalStrategy;
-
-class Solid implements MusicalStrategy, BalanceStrategy
+class Solid implements MusicalStrategy, CrossingStrategy
 {
     /**
-     * @var BalanceStrategy $balanceStrategy
+     * @var CrossingStrategy $crossingStrategy
      */
-    private $balanceStrategy;
+    private $crossingStrategy;
 
     /**
      * @var MusicalStrategy $musicalStrategy
@@ -17,11 +14,11 @@ class Solid implements MusicalStrategy, BalanceStrategy
     private $musicalStrategy;
 
     /**
-     * @param BalanceStrategy $balanceStrategy
+     * @param CrossingStrategy $crossingStrategy
      */
-    public function setBalanceStrategy(BalanceStrategy $balanceStrategy)
+    public function setcrossingStrategy(CrossingStrategy $crossingStrategy)
     {
-        $this->balanceStrategy = $balanceStrategy;
+        $this->crossingStrategy = $crossingStrategy;
     }
 
     /**
@@ -32,13 +29,13 @@ class Solid implements MusicalStrategy, BalanceStrategy
         $this->musicalStrategy = $musicalStrategy;
     }
 
-    public function cross()
+    public function cross($animal = null)
     {
-        if (null === $this->balanceStrategy) {
+        if (null === $this->crossingStrategy) {
             throw new \Exception('You should set a balance strategy before crossing');
         }
 
-        $this->balanceStrategy->cross();
+        return $this->crossingStrategy->cross();
     }
 
     public function play()
@@ -47,6 +44,6 @@ class Solid implements MusicalStrategy, BalanceStrategy
             throw new \Exception('You should set a musical strategy before playing');
         }
 
-        $this->musicalStrategy->play();
+        return $this->musicalStrategy->play();
     }
 }
