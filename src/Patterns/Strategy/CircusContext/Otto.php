@@ -2,9 +2,8 @@
 namespace Solid\Patterns\Strategy\CircusContext;
 
 use Solid\Patterns\Strategy\CrossingStrategy;
-use Solid\Patterns\Strategy\CrossingToolbox\Ballon;
 
-class Solid extends Animal
+class Otto extends Animal
 {
     /**
      * @param CrossingStrategy $crossingStrategy
@@ -12,14 +11,11 @@ class Solid extends Animal
      */
     public function setCrossingStrategy(CrossingStrategy $crossingStrategy)
     {
-        if ($crossingStrategy instanceof Ballon) {
-            throw new \Exception('Solid can not walk on ballon');
-        }
-        parent::setCrossingStrategy($crossingStrategy);
+        throw new \Exception('Otto can not cross');
     }
 
     protected function setName()
     {
-        $this->name = 'Solid';
+        $this->name = 'Otto';
     }
 }

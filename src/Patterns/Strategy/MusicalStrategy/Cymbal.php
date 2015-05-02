@@ -2,11 +2,12 @@
 namespace Solid\Patterns\Strategy\MusicalStrategy;
 
 use Solid\Patterns\Strategy\MusicalStrategy;
+use Solid\Patterns\Strategy\CircusContext\Animal;
 
 class Cymbal implements MusicalStrategy
 {
-    public function play()
+    public function play(Animal $animal)
     {
-        return "play cymbal<br/>";
+        return $animal->getName()." plays cymbal<br/>";
     }
 }

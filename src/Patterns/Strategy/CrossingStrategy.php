@@ -1,7 +1,9 @@
 <?php
 namespace Solid\Patterns\Strategy;
 
+use Solid\Patterns\Strategy\CircusContext\Animal;
+
 interface CrossingStrategy
 {
-    public function cross($context = null);
+    public function cross(Animal $animal);
 }

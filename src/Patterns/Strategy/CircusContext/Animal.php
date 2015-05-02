@@ -24,22 +24,21 @@ abstract class Animal
     protected $name;
 
     /**
-     * @param $name
      * @param CrossingStrategy $crossingStrategy
      * @param MusicalStrategy $musicalStrategy
      */
     public function __construct(
-        $name,
         CrossingStrategy $crossingStrategy = null,
         MusicalStrategy $musicalStrategy = null
     ) {
-        $this->name = $name;
-        if (null === $crossingStrategy) {
-            $this->crossingStrategy = new NoCrossingStrategy();
-        }
-        if (null === $musicalStrategy) {
-            $this->musicalStrategy = new NoMusicalStrategy();
-        }
+        $this->crossingStrategy = (null === $crossingStrategy)
+            ? new NoCrossingStrategy()
+            : $crossingStrategy;
+        $this->musicalStrategy = (null === $musicalStrategy)
+            ? new NoMusicalStrategy()
+            : $musicalStrategy;
+
+        $this->setName();
     }
 
     /**
@@ -75,4 +74,6 @@ abstract class Animal
     {
         return $this->name;
     }
+
+    abstract protected function setName();
 }

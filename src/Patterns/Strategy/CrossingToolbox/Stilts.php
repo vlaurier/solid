@@ -2,11 +2,12 @@
 namespace Solid\Patterns\Strategy\CrossingToolbox;
 
 use Solid\Patterns\Strategy\CrossingStrategy;
+use Solid\Patterns\Strategy\CircusContext\Animal;
 
 class Stilts implements CrossingStrategy
 {
-    public function cross($animal = null)
+    public function cross(Animal $animal)
     {
-        return $animal->getName()." walk on stilts<br/>";
+        return $animal->getName()." walks on stilts<br/>";
     }
 }

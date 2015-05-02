@@ -2,11 +2,12 @@
 namespace Solid\Patterns\Strategy\CrossingToolbox;
 
 use Solid\Patterns\Strategy\CrossingStrategy;
+use Solid\Patterns\Strategy\CircusContext\Animal;
 
 class Ballon implements CrossingStrategy
 {
-    public function cross($animal = null)
+    public function cross(Animal $animal)
     {
-        return $animal->getName()." cross with ballon<br/>";
+        return $animal->getName()." crosses with ballon<br/>";
     }
 }
