@@ -2,7 +2,7 @@
 namespace Solid\Patterns\Strategy\CircusContext;
 
 use Solid\Patterns\Strategy\CrossingStrategy;
-use Solid\Patterns\Strategy\CrossingToolbox\Ballon;
+use Solid\Patterns\Strategy\CrossingToolbox\Unicycle;
 
 class Torp extends Animal
 {
@@ -12,14 +12,14 @@ class Torp extends Animal
      */
     public function setCrossingStrategy(CrossingStrategy $crossingStrategy)
     {
-        if ($crossingStrategy instanceof Ballon) {
-            throw new \Exception('Torp can not walk on ballon');
+        if ($crossingStrategy instanceof Unicycle) {
+            throw new \Exception('Torp can not cross with unicycle');
         }
         parent::setCrossingStrategy($crossingStrategy);
     }
 
-    protected function setName()
+    public function getName()
     {
-        $this->name = 'Torp';
+        return 'Torp le tigre';
     }
 }

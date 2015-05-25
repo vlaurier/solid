@@ -8,6 +8,6 @@ class NoCrossingStrategy implements CrossingStrategy
 {
     public function cross(Animal $animal)
     {
-        return '';
+        return "";
     }
 }

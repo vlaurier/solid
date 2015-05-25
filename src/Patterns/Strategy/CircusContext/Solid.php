@@ -18,8 +18,8 @@ class Solid extends Animal
         parent::setCrossingStrategy($crossingStrategy);
     }
 
-    protected function setName()
+    public function getName()
     {
-        $this->name = 'Solid';
+        return 'Solid le magnifique';
     }
 }

@@ -8,6 +8,6 @@ class Unicycle implements CrossingStrategy
 {
     public function cross(Animal $animal)
     {
-        return $animal->getName()." crosses with unicycle<br/>";
+        return $animal->getName()." traverse avec un monocycle<br/>";
     }
 }

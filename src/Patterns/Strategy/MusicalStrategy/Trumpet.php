@@ -8,6 +8,6 @@ class Trumpet implements MusicalStrategy
 {
     public function play(Animal $animal)
     {
-        return $animal->getName()." plays trumpet<br/>";
+        return $animal->getName()." joue de la trompette<br/>";
     }
 }

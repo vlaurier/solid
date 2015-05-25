@@ -8,6 +8,6 @@ class Ballon implements CrossingStrategy
 {
     public function cross(Animal $animal)
     {
-        return $animal->getName()." crosses with ballon<br/>";
+        return $animal->getName()." traverse sur un ballon<br/>";
     }
 }

@@ -8,6 +8,6 @@ class NoMusicalStrategy implements MusicalStrategy
 {
     public function play(Animal $animal)
     {
-        return '';
+        return "";
     }
 }

@@ -8,6 +8,6 @@ class Cymbal implements MusicalStrategy
 {
     public function play(Animal $animal)
     {
-        return $animal->getName()." plays cymbal<br/>";
+        return $animal->getName()." joue des cymbales<br/>";
     }
 }

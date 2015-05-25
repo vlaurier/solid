@@ -8,6 +8,6 @@ class Stilts implements CrossingStrategy
 {
     public function cross(Animal $animal)
     {
-        return $animal->getName()." walks on stilts<br/>";
+        return $animal->getName()." traverse sur des échasses<br/>";
     }
 }

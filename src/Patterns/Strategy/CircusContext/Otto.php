@@ -14,8 +14,8 @@ class Otto extends Animal
         throw new \Exception('Otto can not cross');
     }
 
-    protected function setName()
+    public function getName()
     {
-        $this->name = 'Otto';
+        return 'Otto';
     }
 }
