@@ -2,6 +2,7 @@
 use Solid\Patterns\ChainOfResponsibility\Artists\Solid;
 use Solid\Patterns\ChainOfResponsibility\Artists\Torp;
 use Solid\Patterns\ChainOfResponsibility\Artists\Otto;
+use Solid\Patterns\ChainOfResponsibility\Artists\Gepetto;
 use Solid\Patterns\ChainOfResponsibility\Client;
 
 require "../../../vendor/autoload.php";
@@ -11,13 +12,14 @@ header('Content-Type: text/html; charset=utf-8');
 $solid = new Solid();
 $torp = new Torp();
 $otto = new Otto();
+$gepetto = new Gepetto();
 
 // Solid indique qu'Otto est derrière lui.
 $solid->setNext($otto);
 // Otto indique que Torp est derrière elle.
 $otto->setNext($torp);
 
-$client = new Client();
+$client = new Client($gepetto);
 // Gepetto demande à Solid de passer à travers le cerceau
 $result = $client->handleRequest($solid, 'cerceau');
 

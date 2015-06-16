@@ -3,15 +3,18 @@ namespace Solid\Patterns\ChainOfResponsibility;
 
 class Client
 {
-    /**
-     * Demande à un gestionaire de gérer une requête.
-     *
-     * @param Handler $handler
-     * @param $request
-     * @return bool
-     */
+    private $defaultHandler;
+
+    public function __construct(Handler $defaultHandler)
+    {
+        $this->defaultHandler = $defaultHandler;
+    }
+
     public function handleRequest(Handler $handler, $request)
     {
-        return $handler->handle($request);
+        if ($handler->handle($request)) {
+            return true;
+        }
+        return $this->defaultHandler->handle($request);
     }
 }
