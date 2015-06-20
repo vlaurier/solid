@@ -6,18 +6,18 @@ use Solid\Patterns\Visitor\Animals\Otto;
 use Solid\Patterns\Visitor\Animals\Torp;
 use Solid\Patterns\Visitor\Animals\Solid;
 
-class Veterinarian implements Visitor
+class Tamer implements Visitor
 {
     public function visitOtto(Otto $otto)
     {
-        echo "Chez Otto, les nageoires et la dentition sont à surveiller<br/>";
+        echo "Dressage d'Otto: avec des poissons !<br/>";
     }
     public function visitTorp(Torp $torp)
     {
-        echo "Griffes, cros et pelage sont les centres d'attention pour Torp<br/>";
+        echo "Dressage de Torp: toujours rester vigilent avec les fauves<br/>";
     }
     public function visitSolid(Solid $solid)
     {
-        echo "Pour Solid il faut vérifier les défenses<br/>";
+        echo "Le dressage de Solid fonctionne avec les cacahuètes...<br/>";
     }
 }
