@@ -5,9 +5,9 @@ abstract class Animal
 {
     public function accept(Visitor $visitor)
     {
-        $method = 'visit'.$this->getShortClassName();
+        $method = 'visit'.$this->getName();
         $visitor->{$method}($this);
     }
 
-    abstract public function getShortClassName();
+    abstract public function getName();
 }

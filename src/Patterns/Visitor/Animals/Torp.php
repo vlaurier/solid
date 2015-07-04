@@ -6,7 +6,7 @@ use Solid\Patterns\Visitor\Visitor;
 
 class Torp extends Animal
 {
-    public function getShortClassName()
+    public function getName()
     {
         return 'Torp';
     }

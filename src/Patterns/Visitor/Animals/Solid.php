@@ -6,7 +6,7 @@ use Solid\Patterns\Visitor\Visitor;
 
 class Solid extends Animal
 {
-    public function getShortClassName()
+    public function getName()
     {
         return 'Solid';
     }
