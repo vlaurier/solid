@@ -10,4 +10,9 @@ class Torp extends Animal
     {
         return 'Torp';
     }
+
+    public function makeYourPerformance()
+    {
+        echo 'Torp est le champion du cerceau';
+    }
 }

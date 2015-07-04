@@ -10,4 +10,9 @@ class Otto extends Animal
     {
         return 'Otto';
     }
+
+    public function makeYourPerformance()
+    {
+        echo 'Otto est spécialiste des ballons';
+    }
 }
