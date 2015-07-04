@@ -1,7 +1,13 @@
 <?php
 namespace Solid\Patterns\Visitor;
 
-interface Animal
+abstract class Animal
 {
-    public function accept(Visitor $visitor);
+    public function accept(Visitor $visitor)
+    {
+        $method = 'visit'.$this->getShortClassName();
+        $visitor->{$method}($this);
+    }
+
+    abstract public function getShortClassName();
 }

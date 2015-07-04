@@ -4,10 +4,10 @@ namespace Solid\Patterns\Visitor\Animals;
 use Solid\Patterns\Visitor\Animal;
 use Solid\Patterns\Visitor\Visitor;
 
-class Solid implements Animal
+class Solid extends Animal
 {
-    public function accept(Visitor $visitor)
+    public function getShortClassName()
     {
-        $visitor->visitSolid($this);
+        return 'Solid';
     }
 }
