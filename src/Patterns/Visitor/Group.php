@@ -1,8 +1,8 @@
 <?php
 namespace Solid\Patterns\Visitor;
 
-abstract class AnimalsGroup implements Artist {
-
+abstract class Group implements Artist
+{
     private $artists;
 
     public function __construct(array $artists)
