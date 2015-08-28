@@ -1,8 +1,6 @@
 <?php
 namespace Solid\Patterns\State;
 
-use Solid\Patterns\State\AbstractState;
-
 class CircusRing
 {
     private $state;
