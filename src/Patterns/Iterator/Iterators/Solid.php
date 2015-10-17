@@ -13,9 +13,7 @@ class Solid implements \Iterator
     }
 
    /**
-    * Return the current element
-    *
-    * @return mixed Can return any type.
+    * Retourne la page courante
     */
     public function current ()
     {
@@ -23,9 +21,7 @@ class Solid implements \Iterator
     }
 
    /**
-    * Move forward to next element
-    *
-    * @return void Any returned value is ignored.
+    * Se déplace sur la page suivante
     */
     public function next ()
     {
@@ -33,9 +29,7 @@ class Solid implements \Iterator
     }
 
    /**
-    * Return the key of the current element
-    *
-    * @return scalar on success, or <b>NULL</b> on failure.
+    * Retourne la clé de la page courante
     */
     public function key ()
     {
@@ -43,9 +37,7 @@ class Solid implements \Iterator
     }
 
    /**
-    * Returns <b>TRUE</b> on success or <b>FALSE</b> on failure.
-    *
-    * @return boolean The return value will be casted to boolean and evaluated.
+    * Vérifie si la position courante est valide
     */
     public function valid ()
     {
@@ -53,9 +45,7 @@ class Solid implements \Iterator
     }
 
    /**
-    * Rewind the Iterator to the first element
-    *
-    * @return void Any returned value is ignored.
+    * Replace l'itérateur sur le premier élément
     */
     public function rewind ()
     {

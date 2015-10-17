@@ -31,9 +31,9 @@ class StoreRoomAggregate implements \IteratorAggregate
     
     public function getIterator()
     {
-        //return new Torp($this->shelves);
+        return new Torp($this->shelves);
         //return new FilterTorp(new Torp($this->shelves), 'Ballon');
-        return new AppendTorp($this->shelves, 'Ballon');
+        //return new AppendTorp($this->shelves, 'Ballon');
     }
 
     public function getGenerator()
