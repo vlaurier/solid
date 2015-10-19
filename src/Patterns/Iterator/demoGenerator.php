@@ -8,22 +8,21 @@ use Solid\Patterns\Iterator\Aggregates\Page;
 require "../../../vendor/autoload.php";
 header('Content-Type: text/html; charset=utf-8');
 
-$cup2015        = new Item('C2015', 'Coupe');
-$cup2017        = new Item('C2017', 'Coupe');
-$ballonYellow   = new Item('B001', 'Ballon');
-$ballonRed      = new Item('B002', 'Ballon');
-$skittles       = new Item('S001', 'Quilles');
-
-$shelves = array(
-    array($cup2015, $cup2017),
-    array($ballonYellow, $ballonRed),
-    array($skittles),
+$storeRoom = new StoreRoomAggregate(
+    array(
+        // Les coupes
+        array(new Item('C2015', 'Coupe'), new Item('C2014', 'Coupe')),
+        // Les articles de jongle
+        array(new Item('SK01', 'Quilles'), new Item('H001', 'Cerceau')),
+        // Les ballons
+        array(new Item('B001', 'Ballon'), new Item('B002', 'Ballon')),
+        // Les tabourets
+        array(new Item('ST01', 'Tabouret'), new Item('ST02', 'Tabouret')),
+    )
 );
-
-$storeRoom = new StoreRoomAggregate($shelves);
 
 echo "<h2> Itération complète sur le débarras avec un générateur</h2>";
 
-foreach ($storeRoom->getGenerator() as $item) {
+foreach ($storeRoom->getIterator() as $item) {
     print $item;
 }
