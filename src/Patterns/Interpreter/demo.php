@@ -4,24 +4,24 @@ namespace Solid\Patterns\Interpreter;
 require "../../../vendor/autoload.php";
 header('Content-Type: text/html; charset=utf-8');
 
-$context = new Context('a', 'b', 'c');
+$context = new Context('stool', 'hoop', 'ballon', 'skittles');
 
 $expression =
     new ThenExpression(
-        array(
+        [
             new AndExpression(
-                array(
-                    new Animal('Solid', 'stool'),
-                    new Animal ('Torp', 'hoop')
-                )
+                [
+                    new Animal('Solid'),
+                    new Animal('Torp'),
+                ]
             ),
             new AndExpression(
-                array(
-                    new Animal('Otto', 'ballon'),
-                    new Animal ('Zeita', 'skittles')
-                )
+                [
+                    new Animal('Otto'),
+                    new Animal('Zeita'),
+                ]
             )
-        )
+        ]
     );
 
 $expression->interpret($context);

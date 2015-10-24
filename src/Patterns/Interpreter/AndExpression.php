@@ -16,7 +16,7 @@ class AndExpression implements AbstractExpression
         foreach ($this->expressions as $key => $expression) {
             $expression->interpret($context);
             if ($key != count($this->expressions) - 1) {
-                echo "<br/>and<br/>";
+                echo " AND ";
             }
         }
     }
