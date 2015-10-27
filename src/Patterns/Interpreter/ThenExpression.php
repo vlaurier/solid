@@ -13,11 +13,13 @@ class ThenExpression implements AbstractExpression
 
     public function interpret(Context $context)
     {
+        $expr = '';
         foreach ($this->expressions as $key => $expression) {
-            $expression->interpret($context);
+            $expr .= $expression->interpret($context);
             if ($key != count($this->expressions) - 1) {
-                echo "<br/>Then<br/>";
+                $expr .= "<br/>Then<br/>";
             }
         }
+        return $expr;
     }
 }

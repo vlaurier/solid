@@ -13,6 +13,6 @@ class Animal implements AbstractExpression
 
     public function interpret(Context $context)
     {
-        echo $this->name ." make a performance with the ". $context->getNextItem();
+        return $this->name ." make a performance with the ". $context->getNextItem();
     }
 }

@@ -4,20 +4,29 @@ namespace Solid\Patterns\Interpreter;
 
 class AndExpression implements AbstractExpression
 {
-    private $expressions;
+    private $animals;
 
-    public function __construct(array $expressions)
+    public function __construct(array $animals)
     {
-        $this->expressions = $expressions;
+        $this->animals = $animals;
     }
 
     public function interpret(Context $context)
     {
-        foreach ($this->expressions as $key => $expression) {
-            $expression->interpret($context);
-            if ($key != count($this->expressions) - 1) {
-                echo " AND ";
-            }
-        }
+        return implode(
+            ' AND ',
+            array_map(
+                function ($animal) use ($context) {
+                    return $animal->interpret($context);
+                },
+                $this->animals
+            )
+        );
+//        foreach ($this->animals as $key => $animal) {
+//            $animal->interpret($context);
+//            if ($key != count($this->animals) - 1) {
+//                echo " AND ";
+//            }
+//        }
     }
 }

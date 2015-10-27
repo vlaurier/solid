@@ -7,7 +7,7 @@ class Context
     private $items;
     private $remainingItems;
 
-    public function __construct(... $items)
+    public function __construct(array $items)
     {
         $this->items = $items;
         $this->remainingItems = $items;
