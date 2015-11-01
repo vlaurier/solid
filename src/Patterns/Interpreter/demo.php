@@ -4,7 +4,7 @@ namespace Solid\Patterns\Interpreter;
 require "../../../vendor/autoload.php";
 header('Content-Type: text/html; charset=utf-8');
 
-$context = new Context(['stool', 'hoop', 'ballon', 'skittles']);
+$context = new Context('stool', 'hoop', 'ballon', 'skittles');
 
 $expression =
     new ThenExpression(
