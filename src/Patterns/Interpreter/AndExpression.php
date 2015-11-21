@@ -4,11 +4,11 @@ namespace Solid\Patterns\Interpreter;
 
 class AndExpression implements AbstractExpression
 {
-    private $animals;
+    private $makeAPerformanceExpressions;
 
-    public function __construct(array $animals)
+    public function __construct(array $makeAPerformanceExpressions)
     {
-        $this->animals = $animals;
+        $this->makeAPerformanceExpressions = $makeAPerformanceExpressions;
     }
 
     public function interpret(Context $context)
@@ -16,10 +16,10 @@ class AndExpression implements AbstractExpression
         return implode(
             ' AND ',
             array_map(
-                function ($animal) use ($context) {
-                    return $animal->interpret($context);
+                function ($makeAPerformanceExpression) use ($context) {
+                    return $makeAPerformanceExpression->interpret($context);
                 },
-                $this->animals
+                $this->makeAPerformanceExpressions
             )
         );
 //        foreach ($this->animals as $key => $animal) {

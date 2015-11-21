@@ -4,11 +4,13 @@ namespace Solid\Patterns\Interpreter;
 
 class Context
 {
+    private $animals;
     private $items;
     private $remainingItems;
 
-    public function __construct(... $items)
+    public function __construct(array $animals, array $items)
     {
+        $this->animals = $animals;
         $this->items = $items;
         $this->remainingItems = $items;
     }
@@ -23,5 +25,14 @@ class Context
         }
 
         return $nextItem;
+    }
+
+    public function call($animal)
+    {
+        if (!in_array($animal, $this->animals)) {
+            throw new \Exception("$animal n\'est pas sur la piste.");
+        }
+
+        return $animal;
     }
 }
