@@ -1,8 +1,11 @@
 <?php
-// src/Patterns/Interpreter/Animal.php
-namespace Solid\Patterns\Interpreter;
+// src/Patterns/Interpreter/\NonTerminalExpression/ThenExpr.php
+namespace Solid\Patterns\Interpreter\NonTerminalExpression;
 
-class ThenExpression implements AbstractExpression
+use Solid\Patterns\Interpreter\AbstractExpression;
+use Solid\Patterns\Interpreter\Context;
+
+class ThenExpr implements AbstractExpression
 {
     private $expressions;
 

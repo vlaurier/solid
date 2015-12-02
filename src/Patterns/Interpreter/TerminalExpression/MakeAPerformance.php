@@ -1,8 +1,11 @@
 <?php
-// src/Patterns/Interpreter/Animal.php
-namespace Solid\Patterns\Interpreter;
+// src/Patterns/Interpreter/TerminalExpression/MakeAPerformance.php
+namespace Solid\Patterns\Interpreter\TerminalExpression;
 
-class MakeAPerformanceExpression implements AbstractExpression
+use Solid\Patterns\Interpreter\AbstractExpression;
+use Solid\Patterns\Interpreter\Context;
+
+class MakeAPerformance implements AbstractExpression
 {
     private $animal;
 

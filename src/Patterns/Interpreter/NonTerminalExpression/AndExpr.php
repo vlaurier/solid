@@ -1,8 +1,11 @@
 <?php
-// src/Patterns/Interpreter/Animal.php
-namespace Solid\Patterns\Interpreter;
+// src/Patterns/Interpreter/NonTerminalExpression/AndExpr.php
+namespace Solid\Patterns\Interpreter\NonTerminalExpression;
 
-class AndExpression implements AbstractExpression
+use Solid\Patterns\Interpreter\AbstractExpression;
+use Solid\Patterns\Interpreter\Context;
+
+class AndExpr implements AbstractExpression
 {
     private $makeAPerformanceExpressions;
 

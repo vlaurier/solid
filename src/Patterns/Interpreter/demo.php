@@ -1,24 +1,28 @@
 <?php
 namespace Solid\Patterns\Interpreter;
 
+use Solid\Patterns\Interpreter\TerminalExpression\MakeAPerformance;
+use Solid\Patterns\Interpreter\NonTerminalExpression\AndExpr;
+use Solid\Patterns\Interpreter\NonTerminalExpression\ThenExpr;
+
 require "../../../vendor/autoload.php";
 header('Content-Type: text/html; charset=utf-8');
 
 $context = new Context(['Solid', 'Torp', 'Pearl', 'Zeita'],['stool', 'hoop', 'ballon', 'skittles']);
 
 $expression =
-    new ThenExpression(
+    new ThenExpr(
         [
-            new AndExpression(
+            new AndExpr(
                 [
-                    new MakeAPerformanceExpression('Solid'),
-                    new MakeAPerformanceExpression('Torp'),
+                    new MakeAPerformance('Solid'),
+                    new MakeAPerformance('Torp'),
                 ]
             ),
-            new AndExpression(
+            new AndExpr(
                 [
-                    new MakeAPerformanceExpression('Pearl'),
-                    new MakeAPerformanceExpression('Zeita'),
+                    new MakeAPerformance('Pearl'),
+                    new MakeAPerformance('Zeita'),
                 ]
             )
         ]
