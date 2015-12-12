@@ -25,6 +25,5 @@ class ThenExpr implements AbstractExpression
                 $this->expressions
             )
         );
-
     }
 }
