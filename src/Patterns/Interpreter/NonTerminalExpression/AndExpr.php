@@ -25,11 +25,5 @@ class AndExpr implements AbstractExpression
                 $this->makeAPerformanceExpressions
             )
         );
-//        foreach ($this->animals as $key => $animal) {
-//            $animal->interpret($context);
-//            if ($key != count($this->animals) - 1) {
-//                echo " AND ";
-//            }
-//        }
     }
 }

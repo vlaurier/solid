@@ -8,7 +8,7 @@ use Solid\Patterns\Interpreter\NonTerminalExpression\ThenExpr;
 require "../../../vendor/autoload.php";
 header('Content-Type: text/html; charset=utf-8');
 
-$context = new Context(['Solid', 'Torp', 'Pearl', 'Zeita'],['stool', 'hoop', 'ballon', 'skittles']);
+$context = new Context(['Solid', 'Torp', 'Pearl', 'Zeita'],['stool', 'hoop', 'ballon']);
 
 $expression =
     new ThenExpr(

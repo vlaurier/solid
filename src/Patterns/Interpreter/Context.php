@@ -6,23 +6,17 @@ class Context
 {
     private $animals;
     private $items;
-    private $remainingItems;
 
     public function __construct(array $animals, array $items)
     {
         $this->animals = $animals;
         $this->items = $items;
-        $this->remainingItems = $items;
     }
 
     public function getNextItem()
     {
-        if (null === $nextItem = array_shift($this->remainingItems)) {
-            $items = $this->items;
-            $this->remainingItems = $items;
-
-            return array_shift($this->remainingItems);
-        }
+        $nextItem = array_shift($this->items);
+        array_push($this->items, $nextItem);
 
         return $nextItem;
     }
