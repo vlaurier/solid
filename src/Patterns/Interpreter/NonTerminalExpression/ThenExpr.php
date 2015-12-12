@@ -16,13 +16,14 @@ class ThenExpr implements AbstractExpression
 
     public function interpret(Context $context)
     {
-        $expr = '';
-        foreach ($this->expressions as $key => $expression) {
-            $expr .= $expression->interpret($context);
-            if ($key != count($this->expressions) - 1) {
-                $expr .= "<br/>Then<br/>";
-            }
-        }
-        return $expr;
+        return implode(
+            '<br/>THEN<br/>',
+            array_map(
+                function ($expression) use ($context) {
+                    return $expression->interpret($context);
+                },
+                $this->expressions
+            )
+        );
     }
 }
