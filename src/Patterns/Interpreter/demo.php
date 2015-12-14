@@ -1,7 +1,7 @@
 <?php
 namespace Solid\Patterns\Interpreter;
 
-use Solid\Patterns\Interpreter\TerminalExpression\MakeAPerformance;
+use Solid\Patterns\Interpreter\TerminalExpression\CircusAct;
 use Solid\Patterns\Interpreter\NonTerminalExpression\AndExpr;
 use Solid\Patterns\Interpreter\NonTerminalExpression\ThenExpr;
 
@@ -15,14 +15,14 @@ $expression =
         [
             new AndExpr(
                 [
-                    new MakeAPerformance('Solid'),
-                    new MakeAPerformance('Torp'),
+                    new CircusAct('Solid'),
+                    new CircusAct('Torp'),
                 ]
             ),
             new AndExpr(
                 [
-                    new MakeAPerformance('Pearl'),
-                    new MakeAPerformance('Zeita'),
+                    new CircusAct('Pearl'),
+                    new CircusAct('Zeita'),
                 ]
             )
         ]

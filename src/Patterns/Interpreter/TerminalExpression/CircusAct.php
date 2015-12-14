@@ -1,11 +1,11 @@
 <?php
-// src/Patterns/Interpreter/TerminalExpression/MakeAPerformance.php
+// src/Patterns/Interpreter/TerminalExpression/circusAct.php
 namespace Solid\Patterns\Interpreter\TerminalExpression;
 
 use Solid\Patterns\Interpreter\AbstractExpression;
 use Solid\Patterns\Interpreter\Context;
 
-class MakeAPerformance implements AbstractExpression
+class CircusAct implements AbstractExpression
 {
     private $animal;
 
