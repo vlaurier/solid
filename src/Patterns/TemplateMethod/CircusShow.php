@@ -9,8 +9,8 @@ abstract class CircusShow
         if ($this->isDday()) {
             $this->beforeShow();
         }
-        $this->makeYourEntry();
-        $this->greetTheSpectators();
+        $this->makeYourEntry(); // placeTheArticle (déposer le matériel)
+        $this->greetTheSpectators(); // TakeARoundOfTheStage (faire un tour de piste)
         $this->actYourPerformance();
         $this->bow();
         if ($this->isDday()) {
