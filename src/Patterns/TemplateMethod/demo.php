@@ -1,8 +1,8 @@
 <?php
 // src/Patterns/TemplateMethod/theFullShow.php
-use Solid\Patterns\TemplateMethod\Shows\OttosCircusShow;
-use Solid\Patterns\TemplateMethod\Shows\TorpsCircusShow;
-use Solid\Patterns\TemplateMethod\Shows\SolidsCircusShow;
+use Solid\Patterns\TemplateMethod\CircusShows\OttosCircusShow;
+use Solid\Patterns\TemplateMethod\CircusShows\TorpsCircusShow;
+use Solid\Patterns\TemplateMethod\CircusShows\SolidsCircusShow;
 
 require "../../../vendor/autoload.php";
 header('Content-Type: text/html; charset=utf-8');

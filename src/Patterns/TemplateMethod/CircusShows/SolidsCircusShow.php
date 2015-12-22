@@ -1,6 +1,6 @@
 <?php
-// src/Patterns/TemplateMethod/Shows/SolidsCircusShow.php
-namespace Solid\Patterns\TemplateMethod\Shows;
+// src/Patterns/TemplateMethod/CircusShows/SolidsCircusShow.php
+namespace Solid\Patterns\TemplateMethod\CircusShows;
 
 use Solid\Patterns\TemplateMethod\CircusShow;
 

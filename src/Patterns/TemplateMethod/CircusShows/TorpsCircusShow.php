@@ -1,6 +1,6 @@
 <?php
-// src/Patterns/TemplateMethod/Shows/TorpsCircusShow.php
-namespace Solid\Patterns\TemplateMethod\Shows;
+// src/Patterns/TemplateMethod/CircusShows/TorpsCircusShow.php
+namespace Solid\Patterns\TemplateMethod\CircusShows;
 
 use Solid\Patterns\TemplateMethod\CircusShow;
 
