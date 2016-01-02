@@ -4,14 +4,14 @@ namespace Solid\Patterns\TemplateMethod;
 
 abstract class CircusShow
 {
-    final public function giveAPerformance()
+    final public function performOnStage()
     {
         if ($this->isDday()) {
             $this->beforeShow();
         }
-        $this->makeYourEntry();
+        $this->placeYourProps();
         $this->greetTheSpectators();
-        $this->actYourPerformance();
+        $this->doAcrobatics();
         $this->bow();
         if ($this->isDday()) {
             $this->afterShow();
@@ -25,7 +25,7 @@ abstract class CircusShow
 
     }
 
-    final private function makeYourEntry()
+    final private function placeYourProps()
     {
         echo $this->getCharacterName() . " entre et dépose son matériel.<br/>";
     }
@@ -35,7 +35,7 @@ abstract class CircusShow
         echo $this->getCharacterName() . " fait le tour de piste en saluant de la main le public.<br/>";
     }
     
-    abstract protected function actYourPerformance();
+    abstract protected function doAcrobatics();
             
     final private function bow()
     {

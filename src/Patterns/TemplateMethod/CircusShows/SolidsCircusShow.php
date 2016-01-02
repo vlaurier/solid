@@ -16,7 +16,7 @@ class SolidsCircusShow extends CircusShow
         echo "Il ne peut s'empêcher de faire un peu le pitre en saluant les spectacteurs.<br/>";
     }
 
-    protected function actYourPerformance()
+    protected function doAcrobatics()
     {
         echo "Le clou du spectacle: le numéro du tabouret !<br/>";
     }

@@ -16,7 +16,7 @@ class OttosCircusShow extends CircusShow
         echo "Elle salue les spectateurs par un tour de piste en envoyant des baisers.<br/>";
     }
 
-    protected function actYourPerformance()
+    protected function doAcrobatics()
     {
         echo "Puis elle réalise son numéro avec les ballons, toujours aussi exceptionnel.<br/>";
     }

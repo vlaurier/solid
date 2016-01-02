@@ -11,7 +11,7 @@ class TorpsCircusShow extends CircusShow
         echo "Les projecteurs s'orientent vers le rideau qui va s'ouvrir...<br/>";
     }
 
-    protected function actYourPerformance()
+    protected function doAcrobatics()
     {
         echo "Puis il s'élance pour bondir entre les cerceaux. Magnifique !<br/>";
     }

@@ -8,10 +8,10 @@ require "../../../vendor/autoload.php";
 header('Content-Type: text/html; charset=utf-8');
 
 $OttosCircusShow = new OttosCircusShow();
-$OttosCircusShow->giveAPerformance();
+$OttosCircusShow->performOnStage();
 
 $TorpsCircusShow = new TorpsCircusShow();
-$TorpsCircusShow->giveAPerformance();
+$TorpsCircusShow->performOnStage();
 
 $SolidsCircusShow = new SolidsCircusShow();
-$SolidsCircusShow->giveAPerformance();
+$SolidsCircusShow->performOnStage();
