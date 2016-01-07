@@ -24,11 +24,11 @@ $game->turn();
 // Au second tour de jeu, Zeita se désinscrit.
 $game->detach($zeita);
 
-// Solid et Otto veulent jouer. Il reçoivent respectivement le 1 et le 3.
+// Solid et Pearl veulent jouer. Il reçoivent respectivement le 1 et le 3.
 $solid = new Player('Solid', 1);
 $game->attach($solid);
-$otto = new Player('Otto', 3);
-$game->attach($otto);
+$pearl = new Player('Pearl', 3);
+$game->attach($pearl);
 
 // ... et la roue est tournée.
 echo "<h2>Second tour de jeu</h2>";

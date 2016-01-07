@@ -1,5 +1,5 @@
 <?php
-// en php7: use Solid\Patterns\Visitor\Animals\{Titou, Ringo, Zeita, Torp, Lion, Panther, Otto, Walrus, Hippo};
+// en php7: use Solid\Patterns\Visitor\Animals\{Titou, Ringo, Zeita, Torp, Lion, Panther, Pearl, Walrus, Hippo};
 use Solid\Patterns\Visitor\Animals\Monkeys;
 use Solid\Patterns\Visitor\Animals\Titou;
 use Solid\Patterns\Visitor\Animals\Ringo;
@@ -11,7 +11,7 @@ use Solid\Patterns\Visitor\Animals\Lion;
 use Solid\Patterns\Visitor\Animals\Panther;
 
 use Solid\Patterns\Visitor\Animals\MarineMammals;
-use Solid\Patterns\Visitor\Animals\Otto;
+use Solid\Patterns\Visitor\Animals\Pearl;
 use Solid\Patterns\Visitor\Animals\Walrus;
 
 use Solid\Patterns\Visitor\Animals\Pachyderms;
@@ -28,7 +28,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 $monkeys = new Monkeys(array(new Titou(), new Ringo(), new Zeita()));
 $bigCats = new BigCats(array(new Torp(), new Lion(), new Panther()));
-$marinMammals = new MarineMammals(array(new Otto, new Walrus()));
+$marinMammals = new MarineMammals(array(new Pearl, new Walrus()));
 $pachyderms = new Pachyderms(array(new Solid(), new Hippo()));
 
 $all = new All(array($monkeys, $bigCats, $marinMammals, $pachyderms));

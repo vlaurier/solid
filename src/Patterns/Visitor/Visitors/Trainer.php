@@ -8,7 +8,7 @@ use Solid\Patterns\Visitor\Animals\Zeita;
 use Solid\Patterns\Visitor\Animals\Torp;
 use Solid\Patterns\Visitor\Animals\Panther;
 use Solid\Patterns\Visitor\Animals\Lion;
-use Solid\Patterns\Visitor\Animals\Otto;
+use Solid\Patterns\Visitor\Animals\Pearl;
 use Solid\Patterns\Visitor\Animals\Walrus;
 use Solid\Patterns\Visitor\Animals\Solid;
 use Solid\Patterns\Visitor\Animals\Hippo;
@@ -39,9 +39,9 @@ class Trainer implements Visitor
     {
         echo "Dressage du lion<br/>";
     }
-    public function visitOtto(Otto $otto)
+    public function visitPearl(Pearl $pearl)
     {
-        echo "Dressage d'Otto: avec des poissons !<br/>";
+        echo "Dressage d'Pearl: avec des poissons !<br/>";
     }
     public function visitWalrus(Walrus $walrus)
     {

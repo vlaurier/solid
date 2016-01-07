@@ -4,15 +4,15 @@ namespace Solid\Patterns\Visitor\Animals;
 use Solid\Patterns\Visitor\Animal;
 use Solid\Patterns\Visitor\Visitor;
 
-class Otto extends Animal
+class Pearl extends Animal
 {
     public function getName()
     {
-        return 'Otto';
+        return 'Pearl';
     }
 
     public function makeYourPerformance()
     {
-        echo 'Otto est spécialiste des ballons';
+        echo 'Pearl est spécialiste des ballons';
     }
 }

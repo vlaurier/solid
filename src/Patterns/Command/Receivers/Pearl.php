@@ -1,12 +1,12 @@
 <?php
-// src/Patterns/Command/Receivers/Otto.php
+// src/Patterns/Command/Receivers/Pearl.php
 namespace Solid\Patterns\Command\Receivers;
 
-class Otto
+class Pearl
 {
     public function comeOutOfTheDressingRoom()
     {
-        echo "Otto leaves the dressing room sticking her tongue out."."<br/>";
+        echo "Pearl leaves the dressing room sticking her tongue out."."<br/>";
     }
 
     public function pickTheBallsUp()

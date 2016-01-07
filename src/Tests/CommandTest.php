@@ -27,7 +27,7 @@ class CommandTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         // A first command is passed to the invoker.
-        $this->receiver = $this->getMock('Solid\Patterns\Command\Receivers\Otto');
+        $this->receiver = $this->getMock('Solid\Patterns\Command\Receivers\Pearl');
         $this->invoker = new Invoker(new PutTheBallsAway($this->receiver));
     }
 

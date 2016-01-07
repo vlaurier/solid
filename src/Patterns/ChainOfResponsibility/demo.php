@@ -1,7 +1,7 @@
 <?php
 use Solid\Patterns\ChainOfResponsibility\Artists\Solid;
 use Solid\Patterns\ChainOfResponsibility\Artists\Torp;
-use Solid\Patterns\ChainOfResponsibility\Artists\Otto;
+use Solid\Patterns\ChainOfResponsibility\Artists\Pearl;
 use Solid\Patterns\ChainOfResponsibility\Artists\Gepetto;
 use Solid\Patterns\ChainOfResponsibility\Client;
 
@@ -11,13 +11,13 @@ header('Content-Type: text/html; charset=utf-8');
 // On crée tous les artistes
 $solid = new Solid();
 $torp = new Torp();
-$otto = new Otto();
+$pearl = new Pearl();
 $gepetto = new Gepetto();
 
-// Solid indique qu'Otto est derrière lui.
-$solid->setNext($otto);
-// Otto indique que Torp est derrière elle.
-$otto->setNext($torp);
+// Solid indique qu'Pearl est derrière lui.
+$solid->setNext($pearl);
+// Pearl indique que Torp est derrière elle.
+$pearl->setNext($torp);
 
 $client = new Client($gepetto);
 // Gepetto demande à Solid de passer à travers le cerceau

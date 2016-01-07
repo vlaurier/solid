@@ -3,7 +3,7 @@ namespace Solid\Patterns\Strategy\CircusContext;
 
 use Solid\Patterns\Strategy\CrossingStrategy;
 
-class Otto extends Animal
+class Pearl extends Animal
 {
     /**
      * @param CrossingStrategy $crossingStrategy
@@ -11,11 +11,11 @@ class Otto extends Animal
      */
     public function setCrossingStrategy(CrossingStrategy $crossingStrategy)
     {
-        throw new \Exception('Otto can not cross');
+        throw new \Exception('Pearl can not cross');
     }
 
     public function getName()
     {
-        return 'Otto';
+        return 'Pearl';
     }
 }

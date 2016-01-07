@@ -2,7 +2,7 @@
 
 use Solid\Patterns\Strategy\CircusContext\Solid;
 use Solid\Patterns\Strategy\CircusContext\Torp;
-use Solid\Patterns\Strategy\CircusContext\Otto;
+use Solid\Patterns\Strategy\CircusContext\Pearl;
 use Solid\Patterns\Strategy\CrossingToolbox\Unicycle;
 use Solid\Patterns\Strategy\CrossingToolbox\Stilts;
 use Solid\Patterns\Strategy\CrossingToolbox\Ballon;
@@ -17,9 +17,9 @@ header('Content-Type: text/html; charset=utf-8');
 
 $solid = new Solid(new Unicycle());
 $torp = new Torp(null, new Trumpet());
-$otto = new Otto(null, new Trumpet());
+$pearl = new Pearl(null, new Trumpet());
 
-$animals = array($solid, $torp, $otto);
+$animals = array($solid, $torp, $pearl);
 
 echo "<h2>Premier tour</h2>";
 
@@ -30,7 +30,7 @@ echo "<h2>Deuxième tour</h2>";
 $solid->setMusicalStrategy(new Trumpet());
 //$solid->setCrossingStrategy(new NoCrossingStrategy());
 $torp->setMusicalStrategy(new Cymbal());
-$otto->setMusicalStrategy(new Cymbal());
+$pearl->setMusicalStrategy(new Cymbal());
 
 go($animals);
 
@@ -38,13 +38,13 @@ echo "<h2>Troisième tour</h2>";
 // Enfin Solid change pour des cymbales.Torp dépose les siennes, et prend des échasses.
 $solid->setMusicalStrategy(new Cymbal());
 $torp->setCrossingStrategy(new Stilts());
-$otto->setMusicalStrategy(new NoMusicalStrategy());
+$pearl->setMusicalStrategy(new NoMusicalStrategy());
 
 go($animals);
 
 //$solid->setCrossingStrategy(new Ballon());
 //$torp->setCrossingStrategy(new Unicycle());
-//$otto->setCrossingStrategy(new Unicycle());
+//$pearl->setCrossingStrategy(new Unicycle());
 function go(array $animals)
 {
     foreach ($animals as $animal) {

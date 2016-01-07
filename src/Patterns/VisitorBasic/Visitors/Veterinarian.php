@@ -2,15 +2,15 @@
 namespace Solid\Patterns\Visitor\Visitors;
 
 use Solid\Patterns\Visitor\Visitor;
-use Solid\Patterns\Visitor\Animals\Otto;
+use Solid\Patterns\Visitor\Animals\Pearl;
 use Solid\Patterns\Visitor\Animals\Torp;
 use Solid\Patterns\Visitor\Animals\Solid;
 
 class Veterinarian implements Visitor
 {
-    public function visitOtto(Otto $otto)
+    public function visitPearl(Pearl $pearl)
     {
-        echo "Chez Otto, les nageoires et la dentition sont à surveiller<br/>";
+        echo "Chez Pearl, les nageoires et la dentition sont à surveiller<br/>";
     }
     public function visitTorp(Torp $torp)
     {

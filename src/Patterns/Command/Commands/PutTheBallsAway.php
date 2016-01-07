@@ -3,13 +3,13 @@
 namespace Solid\Patterns\Command\Commands;
 
 use Solid\Patterns\Command\Command;
-use Solid\Patterns\Command\Receivers\Otto;
+use Solid\Patterns\Command\Receivers\Pearl;
 
 class PutTheBallsAway implements Command
 {
     private $receiver;
 
-    public function __construct(Otto $receiver)
+    public function __construct(Pearl $receiver)
     {
         $this->receiver = $receiver;
     }

@@ -8,7 +8,7 @@ use Solid\Patterns\Visitor\Animals\Zeita;
 use Solid\Patterns\Visitor\Animals\Torp;
 use Solid\Patterns\Visitor\Animals\Panther;
 use Solid\Patterns\Visitor\Animals\Lion;
-use Solid\Patterns\Visitor\Animals\Otto;
+use Solid\Patterns\Visitor\Animals\Pearl;
 use Solid\Patterns\Visitor\Animals\Walrus;
 use Solid\Patterns\Visitor\Animals\Solid;
 use Solid\Patterns\Visitor\Animals\Hippo;
@@ -39,9 +39,9 @@ class Veterinarian implements Visitor
     {
         echo "Inspection de l'état de santé du lion.<br/>";
     }
-    public function visitOtto(Otto $otto)
+    public function visitPearl(Pearl $pearl)
     {
-        echo "Chez Otto, les nageoires et la dentition sont à surveiller<br/>";
+        echo "Chez Pearl, les nageoires et la dentition sont à surveiller<br/>";
     }
     public function visitWalrus(Walrus $walrus)
     {

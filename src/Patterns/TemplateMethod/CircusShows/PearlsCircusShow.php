@@ -1,10 +1,10 @@
 <?php
-// src/Patterns/TemplateMethod/CircusShows/OttosCircusShow.php
+// src/Patterns/TemplateMethod/CircusShows/PearlsCircusShow.php
 namespace Solid\Patterns\TemplateMethod\CircusShows;
 
 use Solid\Patterns\TemplateMethod\CircusShow;
 
-class OttosCircusShow extends CircusShow
+class PearlsCircusShow extends CircusShow
 {
     protected function beforeShow()
     {

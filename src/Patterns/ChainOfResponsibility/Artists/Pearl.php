@@ -3,12 +3,12 @@ namespace Solid\Patterns\ChainOfResponsibility\Artists;
 
 use Solid\Patterns\ChainOfResponsibility\Handler;
 
-class Otto extends Handler
+class Pearl extends Handler
 {
     public function actYourPerformance($request)
     {
         if ($request == "ballon") {
-            echo "Otto est très douée avec le ballon";
+            echo "Pearl est très douée avec le ballon";
 
             return true;
         }

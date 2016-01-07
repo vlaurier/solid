@@ -1,14 +1,12 @@
 <?php
-// src/Patterns/TemplateMethod/theFullShow.php
-use Solid\Patterns\TemplateMethod\CircusShows\OttosCircusShow;
-use Solid\Patterns\TemplateMethod\CircusShows\TorpsCircusShow;
-use Solid\Patterns\TemplateMethod\CircusShows\SolidsCircusShow;
+// src/Patterns/TemplateMethod/demo.php
+use Solid\Patterns\TemplateMethod\CircusShows\{PearlsCircusShow,TorpsCircusShow,SolidsCircusShow};
 
 require "../../../vendor/autoload.php";
 header('Content-Type: text/html; charset=utf-8');
 
-$OttosCircusShow = new OttosCircusShow();
-$OttosCircusShow->performOnStage();
+$PearlsCircusShow = new PearlsCircusShow();
+$PearlsCircusShow->performOnStage();
 
 $TorpsCircusShow = new TorpsCircusShow();
 $TorpsCircusShow->performOnStage();

@@ -2,7 +2,7 @@
 // src/Patterns/Command/Client.php
 namespace Solid\Patterns\Command;
 
-use Solid\Patterns\Command\Receivers\Otto;
+use Solid\Patterns\Command\Receivers\Pearl;
 use Solid\Patterns\Command\Receivers\Torp;
 use Solid\Patterns\Command\Receivers\Titou;
 use Solid\Patterns\Command\Receivers\Zeita;
@@ -18,8 +18,8 @@ use Solid\Patterns\Command\Commands\PutAllTheRestAway;
 require "../../../vendor/autoload.php";
 header('Content-Type: text/html; charset=utf-8');
 
-// First command designated to Otto
-$receiver1 = new Otto();
+// First command designated to Pearl
+$receiver1 = new Pearl();
 $command1 = new PutTheBallsAway($receiver1);
 $invoker = new Invoker($command1);
 $invoker->slideThePaperUnderTheDoor();
