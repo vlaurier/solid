@@ -1,8 +1,6 @@
 <?php
 namespace Solid\Tests;
 
-use Solid\Patterns\TemplateMethod\CircusShows\PearlsCircusShow;
-
 class TemplateMethodTest extends \PHPUnit_Framework_TestCase
 {
     public function testPearlsCircusTrainingShow()
