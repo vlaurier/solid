@@ -1,0 +1,12 @@
+<?php
+namespace Solid\Patterns\Mediator\Colleagues;
+
+use Solid\Patterns\Mediator\Colleague;
+
+class Pearl extends Colleague
+{
+    public function canIopenTicketCounter():bool
+    {
+        return $this->mediator->canOpenTicketCounter();
+    }
+}
