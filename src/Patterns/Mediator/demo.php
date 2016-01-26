@@ -13,7 +13,7 @@ $torp = new Torp($gepetto);
 $pearl = new Pearl($gepetto);
 $solid = new solid($gepetto);
 
-$gepetto->setColleagues($torp,$pearl,$solid);
+//$gepetto->setColleagues($torp,$pearl,$solid);
 
 $torp->canIopenThePark();
 

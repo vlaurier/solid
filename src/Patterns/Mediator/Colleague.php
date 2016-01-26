@@ -1,7 +1,7 @@
 <?php
 namespace Solid\Patterns\Mediator;
 
-class Colleague
+abstract class Colleague
 {
     protected $mediator;
 
@@ -10,7 +10,7 @@ class Colleague
         $this->mediator = $mediator;
     }
 
-    public function isReady()
+    public function isReady():bool
     {
         return (bool)random_int(0,3);
     }

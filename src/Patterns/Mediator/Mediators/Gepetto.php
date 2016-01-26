@@ -19,7 +19,7 @@ class Gepetto implements Mediator
         $this->solid = $solid;
     }
 
-    public function canOpenPark()
+    public function openPark():bool
     {
         if (!$this->torp->isReady()) {
             print "Torp, voyons, prépare-toi!<br/>";
@@ -36,7 +36,7 @@ class Gepetto implements Mediator
         return true;
     }
 
-    public function canOpenTicketCounter()
+    public function openTicketCounter():bool
     {
         if (!$this->pearl->isReady())
         {
@@ -44,7 +44,7 @@ class Gepetto implements Mediator
 
             return false;
         }
-        if (!$this->canOpenCircusTent()) {
+        if (!$this->openCircusTent()) {
 
             return false;
         }
@@ -54,7 +54,7 @@ class Gepetto implements Mediator
         return true;
     }
 
-    public function canOpenCircusTent()
+    public function openCircusTent():bool
     {
         if (!$this->solid->isReady()) {
             print "Désolé, mais Solid n'est pas prêt pour son numéro.<br/>";

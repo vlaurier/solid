@@ -7,6 +7,6 @@ class Torp extends Colleague
 {
     public function canIopenThePark():bool
     {
-        return $this->mediator->canOpenPark();
+        return $this->mediator->openPark();
     }
 }

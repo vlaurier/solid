@@ -7,6 +7,6 @@ class Pearl extends Colleague
 {
     public function canIopenTicketCounter():bool
     {
-        return $this->mediator->canOpenTicketCounter();
+        return $this->mediator->openTicketCounter();
     }
 }
