@@ -3,7 +3,7 @@ namespace Solid\Patterns\Mediator;
 
 interface Mediator
 {
-    public function canOpenPark();
-    public function canOpenTicketCounter();
-    public function canOpenCircusTent();
+    public function openPark();
+    public function openTicketCounter();
+    public function openCircusTent();
 }
