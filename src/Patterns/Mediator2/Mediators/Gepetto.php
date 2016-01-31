@@ -7,21 +7,22 @@ use Solid\Patterns\Mediator2\Colleagues\Torp;
 use Solid\Patterns\Mediator2\Colleagues\Pearl;
 use Solid\Patterns\Mediator2\Colleagues\Solid;
 
-class Gepetto extends Mediator
+class Gepetto implements Mediator
 {
     public function respondTo(Colleague $sender):bool
     {
         if (!$sender->isReady()) {
             echo 'Gepetto (à '.$sender.'): Non, tu ne peux pas ouvrir. Prépare toi !';
-
             return false;
         }
         if ($sender instanceof Torp) {
-            echo 'Gepetto (à Torp): Patiente, je vérifie que tout est bon à la billetterie.<br/>';
+            echo 'Gepetto (à '.$sender.'): Patiente, je vérifie que tout est bon à la billetterie.<br/>';
+            echo '<em>Gepetto contacte Pearl</em><br/>';
             return $this->checkTicketCounter();
         }
         if ($sender instanceof Pearl) {
             echo 'Gepetto (à Pearl): Patiente, je vérifie que tout est prêt au chapiteau.<br/>';
+            echo '<em>Gepetto contacte Solid</em><br/>';
             return $this->checkCircusTent();
         }
         if ($sender instanceof Solid) {
@@ -34,44 +35,19 @@ class Gepetto extends Mediator
 
     private function checkTicketCounter()
     {
-        echo '<em>Gepetto essaie de joindre Pearl à la billetterie.</em><br/>';
-
-        if ($pearl = $this->lookFor('Pearl')) {
-
-            echo '<em>Pearl décroche.</em><br/>';
-            return $pearl->canIopen();
-        }
-        echo "<em>Pearl n'est pas joignable</em><br/>";
-
-        return false;
+        $response = (new Pearl($this))->canIOpen();
+        ($response)
+            ? print "Torp, La billetterie est prête, tu peux ouvrir le parc.<br/>"
+            : print "La billeterie n'est pas prête, attend mon feu vert Torp !<br/>";
+        return $response;
     }
 
     private function checkCircusTent()
     {
-        echo 'Gepetto: Je vais voir auprès de Solid sous le chapiteau.<br/>';
-
-        if ($solid = $this->lookFor('Solid')) {
-            return $solid->canIopen();
-        }
-        echo "Solid n'est pas joignable";
-
-        return false;
-    }
-
-    private function lookFor($name)
-    {
-        $founded = array_filter(
-            $this->colleagues,
-            function($colleague) use ($name)
-            {
-                return $name == $colleague->__toString();
-            }
-        );
-
-        if(empty($founded)) {
-            return false;
-        }
-
-        return array_values($founded)[0];
+        $response = (new Solid($this))->canIOpen();
+        ($response)
+            ? print "Pearl, le chapiteau est prêt, tu peux ouvrir la billetterie<br/>"
+            : print "La chapiteau n'est pas prêt, attend mon feu vert Pearl !<br/>";
+        return $response;
     }
 }

@@ -8,7 +8,6 @@ abstract class Colleague
     public function __construct(Mediator $mediator)
     {
         $this->mediator = $mediator;
-        $this->mediator->addColleague($this);
     }
     abstract public function __toString();
 
