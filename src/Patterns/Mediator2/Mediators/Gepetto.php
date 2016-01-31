@@ -17,12 +17,15 @@ class Gepetto extends Mediator
             return false;
         }
         if ($sender instanceof Torp) {
+            echo 'Gepetto (à Torp): Patiente, je vérifie que tout est bon à la billetterie.<br/>';
             return $this->checkTicketCounter();
         }
         if ($sender instanceof Pearl) {
+            echo 'Gepetto (à Pearl): Patiente, je vérifie que tout est prêt au chapiteau.<br/>';
             return $this->checkCircusTent();
         }
         if ($sender instanceof Solid) {
+            echo "Gepetto (à Solid): C'est parfait tu es prêt, on va pouvoir ouvrir le chapiteau.<br/>";
             return true;
         }
 
@@ -35,7 +38,7 @@ class Gepetto extends Mediator
 
         if ($pearl = $this->lookFor('Pearl')) {
 
-            echo '<em>Pearl décroche</em><br/>';
+            echo '<em>Pearl décroche.</em><br/>';
             return $pearl->canIopen();
         }
         echo "<em>Pearl n'est pas joignable</em><br/>";
