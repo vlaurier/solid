@@ -5,8 +5,8 @@ use Solid\Patterns\Mediator\Colleague;
 
 class Torp extends Colleague
 {
-    public function canIopenThePark():bool
+    public function __toString()
     {
-        return $this->mediator->openPark();
+        return 'Torp';
     }
 }

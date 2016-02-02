@@ -5,5 +5,8 @@ use Solid\Patterns\Mediator\Colleague;
 
 class Solid extends Colleague
 {
-
+    public function __toString()
+    {
+        return 'Solid';
+    }
 }

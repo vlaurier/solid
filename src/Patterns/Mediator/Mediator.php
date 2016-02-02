@@ -3,7 +3,5 @@ namespace Solid\Patterns\Mediator;
 
 interface Mediator
 {
-    public function openPark();
-    public function openTicketCounter();
-    public function openCircusTent();
+    public function respondTo(Colleague $colleague):bool;
 }

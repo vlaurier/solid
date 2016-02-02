@@ -5,8 +5,8 @@ use Solid\Patterns\Mediator\Colleague;
 
 class Pearl extends Colleague
 {
-    public function canIopenTicketCounter():bool
+    public function __toString()
     {
-        return $this->mediator->openTicketCounter();
+        return 'Pearl';
     }
 }
