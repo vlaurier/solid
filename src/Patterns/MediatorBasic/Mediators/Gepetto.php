@@ -1,11 +1,11 @@
 <?php
-namespace Solid\Patterns\Mediator\Mediators;
+namespace Solid\Patterns\MediatorBasic\Mediators;
 
-use Solid\Patterns\Mediator\Mediator;
-use Solid\Patterns\Mediator\Colleague;
-//use Solid\Patterns\Mediator\Colleagues\{Torp, Pearl, Solid};
+use Solid\Patterns\MediatorBasic\Mediator;
+use Solid\Patterns\MediatorBasic\Colleague;
+use Solid\Patterns\MediatorBasic\Colleagues\{Torp, Pearl, Solid};
 
-class Gepetto extends Mediator
+class Gepetto implements Mediator
 {
     public function respondTo(Colleague $sender):bool
     {
@@ -13,17 +13,17 @@ class Gepetto extends Mediator
             echo "Gepetto (à ".$sender."): Prépare toi d'abord s'il te plaît !";
             return false;
         }
-        if ($sender == 'Torp') {
+        if ($sender instanceof Torp) {
             echo 'Gepetto (à Torp): Je vérifie à la billetterie.<br/>';
             echo '<em>Gepetto contacte Pearl</em><br/>';
             return $this->checkTicketCounter();
         }
-        if ($sender == 'Pearl') {
+        if ($sender instanceof Pearl) {
             echo 'Gepetto (à Pearl): Je vérifie du côté du chapiteau.<br/>';
             echo '<em>Gepetto contacte Solid</em><br/>';
             return $this->checkCircusTent();
         }
-        if ($sender == 'Solid') {
+        if ($sender instanceof Solid) {
             echo "Gepetto (à Solid): Tu es prêt, donc le chapiteau aussi !<br/>";
             return true;
         }
@@ -50,7 +50,7 @@ class Gepetto extends Mediator
             print "Solid n'est pas joignable!<br/>";
             return false;
         }
-        $response = $solid->canIOpen();
+        $response = (new Solid($this))->canIOpen();
         ($response)
             ? print "Pearl, le chapiteau est prêt. Ouvre la billetterie !<br/>"
             : print "Pearl attend ! Le chapiteau n'est pas prêt !<br/>";
