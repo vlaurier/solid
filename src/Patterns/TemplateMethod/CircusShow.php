@@ -9,7 +9,7 @@ abstract class CircusShow
         if ($this->isDday()) {
             $this->beforeShow();
         }
-        $this->placeYourProps();
+        $this->setUpYourProps();
         $this->greetTheSpectators();
         $this->doAcrobatics();
         $this->bow();
@@ -25,7 +25,7 @@ abstract class CircusShow
 
     }
 
-    final private function placeYourProps()
+    final private function setUpYourProps()
     {
         echo $this->getCharacterName() . " entre et dépose son matériel.<br/>";
     }
